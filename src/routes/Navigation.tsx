@@ -9,8 +9,8 @@ export const Navigation = () => {
   return (
     <BrowserRouter>
         <Routes>
-            <Route path='/texts' element={ <TextList /> } />
-            <Route path='/form' element={ <Form /> } />
+            {/* <Route path='/texts' element={ <TextList /> } /> */}
+            {/* <Route path='/form' element={ <Form /> } /> */}
             <Route path='/home' element={ <Home /> } />
             <Route path='/*' element={ <Navigate to='/home' replace /> } />
         </Routes>

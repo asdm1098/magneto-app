@@ -1,4 +1,3 @@
-import React from 'react';
 
 interface Props {
   texts?: any[]
@@ -6,7 +5,7 @@ interface Props {
 
 export const TextList = ({texts}: Props) => {
   return (
-    <ul className='list'>
+    <ul>
       {
         texts?.map( (text) => <li key={text.id} className="list_element">{text.text}</li>)
       }

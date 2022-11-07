@@ -1,7 +1,7 @@
 import { NewTextEntry } from './types';
 
 const parseText = ( textFromRequest: any ): string => {
-    if ( !isString(textFromRequest) ) {
+    if ( !isString(textFromRequest) || textFromRequest === "" ) {
         throw new Error('Incorrect o missing text');
     }
 

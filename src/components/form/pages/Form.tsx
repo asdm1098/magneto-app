@@ -1,15 +1,11 @@
-import { ChangeEvent, FormEvent, useState } from 'react';
-import '../styles.css';
-import { TextList } from './TextList';
+import { FormEvent, useState } from 'react';
 import { fetchGetTexts, fetchAddText } from '../../../helpers/api';
+import { TextList } from './TextList';
+import '../styles.css';
 
 export const Form = () => {
   const [text, setText] = useState<string>("");
   const [listTexts, setListTexts] = useState([]);
-  
-  const onChange = ( event: ChangeEvent<HTMLInputElement> ) => {
-    setText(event.target.value)
-  }
 
   const onSubmit = async( event: FormEvent<HTMLFormElement> ) => {
     event.preventDefault();
@@ -35,7 +31,7 @@ export const Form = () => {
           placeholder="Enter text"
           name="text"
           value={ text }
-          onChange={ (e) => onChange(e) }
+          onChange={ (e) => setText(e.target.value) }
         />
 
         <button type="submit">Enviar</button>

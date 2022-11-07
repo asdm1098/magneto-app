@@ -4,7 +4,7 @@ const cors = require('cors');
 
 const app = express()
 app.use(cors());
-app.use(express.json()) //middleware que transforma la req.body a un json
+app.use(express.json())
 
 const PORT = 3000;
 
