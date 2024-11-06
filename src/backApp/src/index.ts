@@ -1,5 +1,8 @@
 import express from 'express';
 import textsRouter from './routes/text';
+
+const { dbConnect } = require('./config/mongo')
+
 const cors = require('cors');
 
 const app = express()
@@ -14,7 +17,7 @@ app.get('/ping', (_req, res) => {
 });
 
 app.use('/api/texts', textsRouter)
-
+dbConnect()
 app.listen(PORT, () => {
     console.log(`Server running oin port ${PORT}`);
 });
